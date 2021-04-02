@@ -22,6 +22,9 @@ height: 98%;
 
 }
 @media(min-width: 800px){
+    #cosmic-mobile{
+        display: none;
+    }
 #container-here{
     position: absolute;
     width: 100%;
@@ -49,7 +52,6 @@ height: 98%;
     top: -1.5%;
 left:20%;
 z-index: 1;
-display:none;
 transition:0.2s;
 }
 #cosmic:hover{
@@ -197,11 +199,11 @@ html{
 }
 #headerh1{
     position: absolute;
-    top: -3%;
+    top: -4%;
     height: 10%;
     width: 93%;
     font-size: 5vh;
-    border: 1px solid white;
+    border: 1px solid grey;
     padding: 15px;
     font-size: 6vh;
     text-shadow: 0px 0px 4px 5px black;
@@ -210,12 +212,31 @@ html{
     text-align: center;
     
 }
+
+#cosmic{
+display: none;
+}
+#cosmic-mobile{
+       position:absolute;
+    width: 30%;
+    height: 17%;
+    top: -1.5%;
+left:-4%;
+z-index: 1;
+transition:0.2s;
+}
+#cosmic-mobile:hover{
+transition:0.5s;
+cursor: pointer;
+}
+
 }
 </style>
 </head>
 <body>
 <div class="container" id="container-here" onload="load()">
 <div id="header">
+    <img id="cosmic-mobile" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png">
 <img id="cosmic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"><h1 id="headerh1">Atomic Editor</h1>
 <ul>
     <li><a id="firstli" href="#">MainPage</a></li>
@@ -251,7 +272,6 @@ html{
       });
     
 $(document).ready(function(){
-$('#cosmic').slideToggle(1000);
 $("#container-here").daisyjs({
     dotColor: 'cyan',
     lineColor: 'grey'
